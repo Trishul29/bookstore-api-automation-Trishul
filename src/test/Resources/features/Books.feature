@@ -50,14 +50,14 @@ Feature: Validate the book store flow of add , update , list and delete books by
 
   Scenario Outline: Add an existing book to the store with Missing  Book ID
 
-    When the user adds  book to the store with missing Id <id> name "<BookName>", author "<Author>", summary "<Summary>", and year <Year>
+     When the user adds  book to the store with name "<BookName>", author "<Author>", summary "<Summary>", and year <Year>
     Then  Response status code is 200
     Then ALl Book Data is Present
 
 
     Examples:
-      | id | BookName      | Author       | Summary           | Year |
-      | -1 | The Alchemist | Paulo Coelho | A journey of self | 1988 |
+      | BookName      | Author       | Summary           | Year |
+       | The Alchemist | Paulo Coelho | A journey of self | 1988 |
 
   Scenario: Get the details of a specific book using its ID
 

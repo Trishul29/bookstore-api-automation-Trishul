@@ -40,7 +40,7 @@ public class BookStepD extends BaseClientHelper {
     public void the_user_is_logged_in_successfully() {
         testContext.loginResponse = signUpService.LogInService(testContext.loginRequestBody);
         Assert.assertNotNull(testContext.loginResponse.getAccess_token(), "Access token is missing");
-        //accessToken=testContext.loginResponse.getAccess_token();
+
 
 
     }
@@ -165,10 +165,10 @@ public class BookStepD extends BaseClientHelper {
     }
 
 
-    @When("the user adds  book to the store with missing Id {int} name {string}, author {string}, summary {string}, and year {int}")
+    @When("the user adds  book to the store with name {string}, author {string}, summary {string}, and year {int}")
     public void theUserAddsANewBookToTheStoreWithMissingId( String name, String author, String summary, int year) {
+
         testContext.addBookRequestBody = AddBookRequestBody.builder()
-                .id(null)
                 .name(name)
                 .author(author)
                 .book_summary(summary)
