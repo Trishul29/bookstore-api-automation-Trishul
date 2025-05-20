@@ -1,8 +1,11 @@
 📚 Bookstore API Automation with CI/CD Integration
+
 Overview
+
 This project automates end-to-end API testing of a Bookstore application using Cucumber BDD and TestNG in Java with Rest Assured.
 
 💻 Tech Stack Overview
+
 Component	Description
 🧠 IDE	IntelliJ IDEA
 ☕ Language	Java 11+
@@ -86,6 +89,7 @@ Jenkins installed with required plugins: Git, Maven, Pipeline, Allure
 Ngrok (for local development webhook exposure)
 
 
+
 Sample Jenkins Pipeline for QA Automation
 groovy
 Copy
@@ -119,6 +123,8 @@ pipeline {
         }
     }
 }
+
+
 Development Workflow with Jenkins & Ngrok
 Set up Jenkins jobs for your Dev and QA repos.
 
