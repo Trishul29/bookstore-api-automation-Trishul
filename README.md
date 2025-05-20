@@ -76,10 +76,87 @@ Edit
 mvn clean test
 Generate and open Allure reports:
 
+
+📊 Allure Reporting
+Allure is integrated into this framework to generate visually rich test execution reports.
+
+🛠 Prerequisites
+Java 11+
+
+Maven
+
+Allure CLI (Command Line Interface)
+
+🔧 Install Allure CLI
+On macOS (using Homebrew):
 bash
 Copy
 Edit
-mvn allure:serve
+brew install allure
+On Windows (using Scoop):
+bash
+Copy
+Edit
+scoop install allure
+Or download manually from Allure Releases
+
+🚀 How to Generate and View Reports
+Run your test suite
+This will generate the result files required for the report.
+
+bash
+Copy
+Edit
+mvn clean test
+Generate and serve the report
+
+bash
+Copy
+Edit
+allure serve target/allure-results
+This command will:
+
+Generate the report
+
+Automatically open it in your browser
+
+🗂️ Generate Static Report (Optional)
+To generate a static version of the report (can be shared or committed):
+
+bash
+Copy
+Edit
+allure generate target/allure-results --clean -o target/allure-report
+Then open:
+
+text
+Copy
+Edit
+target/allure-report/index.html
+🧪 Allure Integration in Cucumber
+Ensure this plugin is added in @CucumberOptions of your runner:
+
+java
+Copy
+Edit
+plugin = {
+"pretty",
+"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
+"html:target/cucumber-reports.html"
+}
+
+✅ Benefits of Allure
+Interactive and rich test UI
+
+Categorization of test failures
+
+Tracks test history and trends
+
+Easily integrates with CI tools (e.g., Jenkins, GitHub Actions)
+
+
+
+
 🎯 CI/CD Integration
 Prerequisites
 Jenkins installed with required plugins: Git, Maven, Pipeline, Allure

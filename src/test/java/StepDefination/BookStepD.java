@@ -128,7 +128,6 @@ public class BookStepD extends BaseClientHelper {
         } else if (testContext.addBookResponse != null) {
             actualStatusCode = testContext.addBookResponse.getStatusCode();
         } else if (testContext.getBookByIdResponse != null) {
-
             actualStatusCode = testContext.getBookByIdResponse.getStatusCode();
         } else if (testContext.deleteBookResponseBody != null) {
             actualStatusCode = testContext.deleteBookResponseBody.getStatusCode();
@@ -333,6 +332,11 @@ public class BookStepD extends BaseClientHelper {
 
         if (testContext.deleteBookResponseBody != null) {
             actualStatusCode = testContext.deleteBookResponseBody.getStatusCode();
+            assertEquals(actualStatusCode, 404);
+        }
+        else
+        {
+            actualStatusCode = testContext.getBookByIdResponse.getStatusCode();
             assertEquals(actualStatusCode, 404);
         }
 

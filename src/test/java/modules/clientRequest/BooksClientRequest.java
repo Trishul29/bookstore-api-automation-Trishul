@@ -65,7 +65,6 @@ public class BooksClientRequest extends BaseClientHelper{
     }
 
     public Response getAllBooks(String token) {
-        String endpoint = properties.getProperty("add_new_book");
 
         Response response = given()
                 . given().spec(BaseClientHelper.requestSpec)
@@ -81,7 +80,6 @@ public class BooksClientRequest extends BaseClientHelper{
     }
 
     public Response deleteTheBookById(int bookId,String token) {
-        String endpoint = properties.getProperty("by_book_id");
 
         Response response = given()
                 .spec(BaseClientHelper.requestSpec)

@@ -15,10 +15,7 @@ import static org.hamcrest.text.MatchesPattern.matchesPattern;
 public class BaseClientHelper {
 
     public static String propertyPath = System.getProperty("user.dir") + "/src/main/resources/env.properties";
-    public static String propertyPath1 = System.getProperty("user.dir") + "/src/main/resources/data.properties";
     public static Properties properties = FileUtility.loadProperties(propertyPath);
-    public static Properties properties1 = FileUtility.loadProperties(propertyPath1);
-    public static String bearerToken = properties.getProperty("bearerToken");
     public static String baseUri = properties.getProperty("baseUri");
 
 

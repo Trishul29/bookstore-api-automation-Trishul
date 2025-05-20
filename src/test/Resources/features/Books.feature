@@ -87,9 +87,9 @@ Feature: Validate the book store flow of add , update , list and delete books by
   Scenario Outline: Negative Scenario Get the details of a  book using Invalid ID
 
     And the user adds a new book to the store
-    When the user fetches the book details using the book ID
+    And the user fetches the book details using Invalid ID
     And  Response status code is  404
-    And the response should contain error message "<error_message>"
+   And the response should contain error message "<error_message>"
 
 Examples:
   |error_message|

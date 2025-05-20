@@ -41,21 +41,15 @@ public class SignUp extends BaseClientHelper {
                 .email(email)
                 .password(password)
                 .build();
-        System.out.println("FAKER EMAIL: " + testContext.signUpRequestBody.getEmail());
-
 
     }
-//    @When("the client signs up the user")
-//    public void the_client_signs_up_the_user() {
-//
-//        testContext.signUpResponse = signUpService.SignupService(testContext.signUpRequestBody);
-//
-//    }
+
 @When("the client signs up the user with {string}")
 public void the_client_signs_up_the_user_with(String status) {
     if (status.equalsIgnoreCase("valid")) {
 
         testContext.signUpResponse = signUpService.SignupService(testContext.signUpRequestBody);
+
     } else if (status.equalsIgnoreCase("invalid")) {
         testContext.signUpResponse=signUpService.invalidSignUpService(testContext.signUpRequestBody);
     } else {
@@ -68,7 +62,18 @@ public void the_client_signs_up_the_user_with(String status) {
 
     @Then("the response status code should be {int}")
     public void the_response_status_code_should_be(Integer int1) {
-        assertEquals(testContext.signUpResponse.getStatusCode(),int1);
+        int actualStatusCode;
+        if(testContext.loginResponse!=null)
+        {
+            actualStatusCode=testContext.loginResponse.getStatusCode();
+            assertEquals(actualStatusCode,int1);
+        }
+        else
+        {
+            actualStatusCode=testContext.signUpResponse.getStatusCode();
+            assertEquals(actualStatusCode,int1);
+
+        }
     }
 
     @Given("user with already registered data")
