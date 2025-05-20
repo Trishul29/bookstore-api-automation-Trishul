@@ -50,10 +50,9 @@ Feature: Validate the book store flow of add , update , list and delete books by
 
   Scenario Outline: Add an existing book to the store with Missing  Book ID
 
-   # And the user adds a  book with id <id> name "<BookName>", author "<Author>", summary "<Summary>", and year <Year>
     When the user adds  book to the store with missing Id <id> name "<BookName>", author "<Author>", summary "<Summary>", and year <Year>
-    And  Response status code is 200
-    And ALl Book Data is Present
+    Then  Response status code is 200
+    Then ALl Book Data is Present
 
 
     Examples:

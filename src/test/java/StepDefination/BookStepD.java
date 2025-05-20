@@ -1,6 +1,5 @@
 package StepDefination;
 import PojoClasses.create.AddBookRequestBody;
-import PojoClasses.get.GetAllBookResponse;
 import PojoClasses.get.GetBookByIdResponse;
 import PojoClasses.update.UpDateBookRequestBody;
 import io.cucumber.java.en.And;
@@ -13,12 +12,9 @@ import modules.clientService.BooksService;
 import modules.clientService.SignUpService;
 import Constants.Constants;
 import org.testng.Assert;
-
-import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-import static junit.framework.TestCase.assertNotNull;
 import static org.testng.Assert.assertEquals;
 
 public class BookStepD extends BaseClientHelper {
@@ -170,7 +166,7 @@ public class BookStepD extends BaseClientHelper {
 
 
     @When("the user adds  book to the store with missing Id {int} name {string}, author {string}, summary {string}, and year {int}")
-    public void theUserAddsANewBookToTheStoreWithMissingId(int id, String name, String author, String summary, int year) {
+    public void theUserAddsANewBookToTheStoreWithMissingId( String name, String author, String summary, int year) {
         testContext.addBookRequestBody = AddBookRequestBody.builder()
                 .id(null)
                 .name(name)

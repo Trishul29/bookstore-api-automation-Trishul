@@ -8,9 +8,6 @@ import Utilities.FileUtility;
 
 import java.util.Properties;
 
-import static org.hamcrest.core.AnyOf.anyOf;
-import static org.hamcrest.core.StringContains.containsString;
-import static org.hamcrest.text.MatchesPattern.matchesPattern;
 
 public class BaseClientHelper {
 

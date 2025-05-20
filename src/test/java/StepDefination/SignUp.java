@@ -2,7 +2,6 @@ package StepDefination;
 
 import Constants.Constants;
 import PojoClasses.create.SignUpRequestBody;
-import PojoClasses.create.SignUpResponse;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
